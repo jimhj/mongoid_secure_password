@@ -7,15 +7,12 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'mongoid_secure_password'
+    gem 'mongoid_secure_password', :git => "git://github.com/jimhj/mongoid_secure_password.git"
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
-
-    $ gem install mongoid_secure_password
 
 ## Usage
 ```ruby
