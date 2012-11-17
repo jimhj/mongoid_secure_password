@@ -17,9 +17,13 @@ module Mongoid
       end
     end
 
-    def password=(new_password)
-      @password = ::BCrypt::Password.create(new_password)
-      self.password_digest = @password    
+    def password=(new_password) 
+      if new_password.blank?
+        self.errors.add(:password, "cannot be blank.")
+      else
+        @password = ::BCrypt::Password.create(new_password)
+        self.password_digest = @password
+      end
     end
 
   end
